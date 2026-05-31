@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight, Copyright } from "lucide-react";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
         <h2 className="text-6xl font-bold mb-6 leading-tight">Everything a dev needs<br />in one place</h2>
         <p className="text-gray-400 text-xl max-w-xl mb-10">Explore dev tools, check live weather, and view GitHub stats — all from a single dashboard.</p>
         <div className="flex gap-4">
-          <Link href="/register" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl text-lg font-semibold">Get Started →</Link>
+          <Link href="/register" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl text-lg font-semibold flex items-center gap-2">Get Started <ArrowRight size={20} /></Link>
           <Link href="/login" className="px-6 py-3 border border-gray-700 hover:bg-gray-800 rounded-xl text-lg">Login</Link>
         </div>
       </section>
@@ -108,7 +109,7 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-gray-800 py-8 text-center text-gray-500 text-sm">
-        <p>Built by <a href="https://abdulrdeveloper.me" className="text-blue-400 hover:underline" target="_blank">Abdul Rahman</a> · DevScope © 2026</p>
+        <p className="flex items-center justify-center gap-2">Built by <a href="https://abdulrdeveloper.me" className="text-blue-400 hover:underline" target="_blank">Abdul Rahman</a> | DevScope <Copyright size={16} className="inline" /> 2026</p>
       </footer>
 
     </div>

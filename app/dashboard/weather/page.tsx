@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CloudRain, Thermometer, Droplets, CloudSun, Wind } from "lucide-react";
 
 export default function WeatherPage() {
   const [city, setCity] = useState("");
@@ -22,6 +23,7 @@ export default function WeatherPage() {
       }
 
       setWeather(data);
+      console.log(data);
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -31,7 +33,7 @@ export default function WeatherPage() {
 
   return (
     <div>
-      <h1>🌦️ Weather App</h1>
+      <h1 className="flex items-center gap-2"><CloudRain size={20} /> Weather App</h1>
 
       <input
         type="text"
@@ -48,10 +50,10 @@ export default function WeatherPage() {
       {weather && (
         <div>
           <h2>{weather.name}, {weather.sys.country}</h2>
-          <p>🌡️ Temp: {weather.main.temp}°C</p>
-          <p>💧 Humidity: {weather.main.humidity}%</p>
-          <p>🌤️ {weather.weather[0].description}</p>
-          <p>💨 Wind: {weather.wind.speed} m/s</p>
+          <p className="flex items-center gap-1"><Thermometer size={20} /> Temp: {weather.main.temp}°C</p>
+          <p className="flex items-center gap-1"><Droplets size={20} /> Humidity: {weather.main.humidity}%</p>
+          <p className="flex items-center gap-1"><CloudSun size={20} /> {weather.weather[0].description}</p>
+          <p className="flex items-center gap-1"><Wind size={20} /> Wind: {weather.wind.speed} m/s</p>
         </div>
       )}
     </div>
