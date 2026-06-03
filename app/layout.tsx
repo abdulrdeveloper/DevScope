@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "DevScope",
   description: "DevScope - Everything a dev needs in one place",
   icons: {
-    icon: "/favicon.svg",
+    icon: "/icon.svg",
   },
 };
 
