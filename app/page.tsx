@@ -96,7 +96,7 @@ export default function Home() {
           </div>
           
           <div className="flex-1 w-full relative group">
-            <div className="absolute -inset-1 bg-linear-to-r from-amber-500/20 to-transparent rounded-3xl blur-xl opacity-0 opacity-100 transition duration-700"></div>
+            <div className="absolute -inset-1 bg-linear-to-r from-amber-500/20 to-transparent rounded-3xl blur-xl opacity-100 transition duration-700"></div>
             <div className="bg-[#0a0a0a] border border-[#222] rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl h-90 md:h-100 flex items-center justify-center">
               <div className="absolute top-0 w-full h-px bg-linear-to-r from-transparent via-amber-500/50 to-transparent"></div>
               
@@ -113,8 +113,8 @@ export default function Home() {
                        <div className="h-2 rounded-full bg-[#222] w-3/4"></div>
                      </div>
                    </div>
-                   <div className="bg-[#111] border border-[#222] rounded-lg p-4 h-24 flex flex-col justify-between border-amber-500/50 transition-colors delay-75">
-                     <Terminal size={18} className="text-gray-500 text-amber-500 transition-colors" />
+                   <div className="bg-[#111] border border-amber-500/50 rounded-lg p-4 h-24 flex flex-col justify-between transition-colors delay-75">
+                     <Terminal size={18} className="text-amber-500 transition-colors" />
                      <div className="space-y-2">
                        <div className="h-2 rounded-full bg-[#333] w-2/3"></div>
                        <div className="h-2 rounded-full bg-[#222] w-1/2"></div>
@@ -168,19 +168,19 @@ export default function Home() {
           </div>
           
           <div className="flex-1 w-full relative group">
-            <div className="absolute -inset-1 bg-linear-to-r from-amber-500/20 to-transparent rounded-3xl blur-xl opacity-0 opacity-100 transition duration-700"></div>
+            <div className="absolute -inset-1 bg-linear-to-r from-amber-500/20 to-transparent rounded-3xl blur-xl opacity-100 transition duration-700"></div>
             <div className="bg-[#0a0a0a] border border-[#222] rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl h-90 md:h-100 flex items-center justify-center">
               <div className="absolute top-0 w-full h-px bg-linear-to-r from-transparent via-amber-500/50 to-transparent"></div>
               
               <div className="w-full max-w-sm">
-                <div className="flex justify-between items-end mb-6 md:mb-10 border-b border-[#222] pb-6 md:pb-10 border-amber-500/30 transition-colors duration-500">
+                <div className="flex justify-between items-end mb-6 md:mb-10 border-b border-amber-500/30 pb-6 md:pb-10 transition-colors duration-500">
                   <div>
                     <div className="text-gray-500 text-xs font-mono mb-2 tracking-widest">CURRENT DATA</div>
                     <div className="text-5xl md:text-6xl font-black text-white flex items-start">
                       72<span className="text-2xl text-amber-500 mt-2">°F</span>
                     </div>
                   </div>
-                  <CloudSun size={56} className="text-amber-500/80 text-amber-500 scale-110 transition-all duration-500" />
+                  <CloudSun size={56} className="text-amber-500 scale-110 transition-all duration-500" />
                 </div>
                 <div className="space-y-4">
                   {[ {l: 'MON', w: 40}, {l: 'TUE', w: 65}, {l: 'WED', w: 30} ].map((stat, index) => (
@@ -227,14 +227,14 @@ export default function Home() {
           </div>
           
           <div className="flex-1 w-full relative group">
-            <div className="absolute -inset-1 bg-linear-to-r from-amber-500/20 to-transparent rounded-3xl blur-xl opacity-0 opacity-100 transition duration-700"></div>
+            <div className="absolute -inset-1 bg-linear-to-r from-amber-500/20 to-transparent rounded-3xl blur-xl opacity-100 transition duration-700"></div>
             <div className="bg-[#0a0a0a] border border-[#222] rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl h-90 md:h-100 flex items-center justify-center">
               <div className="absolute top-0 w-full h-px bg-linear-to-r from-transparent via-amber-500/50 to-transparent"></div>
               
               <div className="w-full max-w-sm space-y-6">
                 <div className="flex gap-4 items-center">
-                  <div className="w-14 h-14 rounded-full bg-linear-to-br animate-bounce from-[#1a1a1a] to-[#0a0a0a] border border-[#333] flex items-center justify-center border-amber-500/50 transition-colors">
-                    <ShieldCheck size={24} className="text-gray-600 text-amber-500 transition-colors" />
+                  <div className="w-14 h-14 rounded-full bg-linear-to-br animate-bounce from-[#1a1a1a] to-[#0a0a0a] border border-amber-500/50 flex items-center justify-center transition-colors">
+                    <ShieldCheck size={24} className="text-amber-500 transition-colors" />
                   </div>
                   <div className="space-y-2 flex-1">
                     <div className="h-3 w-1/2 bg-[#222] rounded-full"></div>
@@ -244,7 +244,7 @@ export default function Home() {
                 <div className="grid grid-cols-3 gap-2 py-6 border-y border-[#222]">
                   {["Repos", "Followers", "Following"].map((label, index) => (
                     <div key={index} className="text-center transition-transform hover:-translate-y-1">
-                      <div className="text-xl font-bold text-white mb-1 text-amber-500 transition-colors delay-100">{["42", "1.2k", "38"][index]}</div>
+                      <div className="text-xl font-bold text-amber-500 mb-1 transition-colors delay-100">{["42", "1.2k", "38"][index]}</div>
                       <div className="text-[10px] text-gray-500 uppercase tracking-widest">{label}</div>
                     </div>
                   ))}
@@ -254,7 +254,7 @@ export default function Home() {
                     <ArrowRight size={12} className="text-amber-500" />
                     <span>FETCH /users/:username</span>
                   </div>
-                  <div className="h-24 bg-[#111] border border-[#222] rounded-xl p-4 relative overflow-hidden font-mono text-[11px] text-gray-400 leading-relaxed border-amber-500/30 transition-colors">
+                  <div className="h-24 bg-[#111] border border-amber-500/30 rounded-xl p-4 relative overflow-hidden font-mono text-[11px] text-gray-400 leading-relaxed transition-colors">
                     <span className="text-amber-500">{`{`}</span><br/>
                     <span className="pl-4">"login": <span className="text-blue-400">"abdulrdeveloper"</span>,</span><br/>
                     <span className="pl-4">"id": <span className="text-[#a78bfa]">1</span>,</span><br/>
@@ -277,13 +277,13 @@ export default function Home() {
               <span className="text-white"> AND SECURE FLOW.</span>
             </h3>
             <p className="text-gray-400 text-base md:text-xl leading-relaxed font-light">
-              Robust JWT authentication securing your data. Start tracking tools independently with absolute confidence. Your data stays entirely within your protected scope.
+              Middleware-powered validation with Zod schemas securing your data. Start tracking tools independently with absolute confidence. Your data stays entirely within your protected scope.
             </p>
             <ul className="space-y-4 pt-2">
               {[
-                "Military-grade JWT Auth flows",
-                "Complete payload encryption",
-                "No bloatware, tracking, or hidden cookies",
+                "Smart Zod validation schemas",
+                "Client-side middleware protection",
+                "Real-time form validation feedback",
                 "Your dashboard lives on your terms"
               ].map((point, index) => (
                 <li key={index} className="flex items-center gap-3">
@@ -295,14 +295,14 @@ export default function Home() {
           </div>
           
           <div className="flex-1 w-full relative group">
-            <div className="absolute -inset-1 bg-linear-to-r from-amber-500/20 to-transparent rounded-3xl blur-xl opacity-0 opacity-100 transition duration-700"></div>
+            <div className="absolute -inset-1 bg-linear-to-r from-amber-500/20 to-transparent rounded-3xl blur-xl opacity-100 transition duration-700"></div>
             <div className="bg-[#0a0a0a] border border-[#222] rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl h-90 md:h-100 flex items-center justify-center">
               <div className="absolute top-0 w-full h-px bg-linear-to-r from-transparent via-amber-500/50 to-transparent"></div>
               
               <div className="w-full max-w-sm flex flex-col items-center justify-center space-y-8">
                 <div className="relative">
                   <div className="absolute inset-0 bg-amber-500/20 blur-2xl rounded-full"></div>
-                  <div className="w-24 h-24 rounded-2xl bg-[#111] border border-[#333] flex items-center justify-center relative z-10 border-amber-500/50 -translate-y-2 transition-all duration-500 shadow-2xl">
+                  <div className="w-24 h-24 rounded-2xl bg-[#111] border border-amber-500/50 flex items-center justify-center relative z-10 -translate-y-2 transition-all duration-500 shadow-2xl">
                     <ShieldCheck size={40} className="text-amber-500" />
                   </div>
                 </div>
@@ -318,7 +318,7 @@ export default function Home() {
                     <span className="text-[10px] text-gray-500 font-mono">Payload</span>
                     <span className="text-blue-400 text-xs font-mono ml-auto">eyJzdWIi...</span>
                   </div>
-                  <div className="h-10 bg-[#111] border border-[#222] rounded-lg p-2 flex items-center px-4 overflow-hidden relative border-amber-500/30 transition-colors delay-150">
+                  <div className="h-10 bg-[#111] border border-amber-500/30 rounded-lg p-2 flex items-center px-4 overflow-hidden relative transition-colors delay-150">
                     <div className="absolute top-0 left-0 h-full w-1 bg-rose-500"></div>
                     <span className="text-[10px] text-gray-500 font-mono">Signature</span>
                     <span className="text-rose-400 text-xs font-mono ml-auto">SflKxwRJ...</span>

@@ -4,29 +4,15 @@ A professional, production-grade developer dashboard built with Next.js, React, 
 
 ## Features
 
-🔧 **Developer Tools Explorer**
-- Browse and discover the best development tools and resources
-- Categorized tool listings with descriptions
-- Links to official tool websites
-- Beautiful card-based interface
+**Developer Tools Explorer** - Browse and discover development tools with categorized listings and direct links to resources.
 
-🌤️ **Weather Tracker**
-- Real-time weather data for any city worldwide
-- Current temperature, humidity, wind speed, and conditions
-- Beautiful weather visualizations
-- Responsive search interface
+**Weather Tracker** - Real-time weather data for any location worldwide with current metrics and conditions.
 
-📊 **GitHub Stats Viewer**
-- View detailed GitHub user profiles
-- Track followers, following, and repositories
-- See profile creation dates and bio information
-- Direct links to GitHub profiles
+**GitHub Stats Viewer** - View detailed GitHub user profiles with repository, follower, and account metrics.
 
-🔐 **User Authentication**
-- Secure authentication system
-- Email verification support
-- Role-based user management
-- Token-based sessions
+**User Authentication** - Secure token-based authentication system with role-based user management.
+
+**Form Validation** - Middleware-powered Zod validation schemas with client-side protection and real-time feedback.
 
 ## Tech Stack
 
@@ -35,6 +21,7 @@ A professional, production-grade developer dashboard built with Next.js, React, 
 - **Styling**: Tailwind CSS v4 with PostCSS
 - **Icons**: Lucide React 1.17.0
 - **Language**: TypeScript 5+
+- **Validation**: Zod 4.4.3 for runtime schema validation
 - **API Integration**: Weather API & GitHub API
 
 ## Getting Started
@@ -98,47 +85,53 @@ app/
     │   └── page.tsx       # Weather tracker
     └── github/
         └── page.tsx       # GitHub stats viewer
+
+lib/
+├── validators.ts           # Zod validation schemas & utilities
+```
+
+## Validation System
+
+DevScope uses **Zod** for runtime schema validation with a middleware-like pattern:
+
+### Available Validators
+
+- **`loginSchema`** - Validates username (3-50 chars, alphanumeric) and password (min 6 chars)
+- **`registerSchema`** - Validates username, email, password (requires uppercase, lowercase, number)
+
+### Usage
+
+**Bulk validation before API call:**
+```typescript
+import { validateInput, loginSchema, LoginInput } from '@/lib/validators';
+
+const validation = await validateInput<LoginInput>(loginSchema, { username, password });
+if (!validation.valid) {
+  setError(validation.error);
+  return;
+}
+```
+
+**Real-time field validation:**
+```typescript
+import { validateField, loginSchema } from '@/lib/validators';
+
+const error = validateField('username', username, loginSchema.shape.username);
+if (error) setFieldError(error);
 ```
 
 ## Design System
 
-### Colors
-- **Background**: `#0a0a0a` (Deep black)
-- **Cards**: `#111` (Dark gray)
-- **Accent**: `#f59e0b` (Amber-500)
-- **Borders**: `#222` (Medium gray)
-
-### Typography
-- **Headings**: `font-black` (Extra bold)
-- **Body**: `font-light` (Thin)
-- **Metadata**: `font-light` text-gray-500
-
-### Components
-- Rounded borders with subtle hover effects
-- Amber glow on interactive elements
-- Smooth transitions (300-500ms)
-- Responsive grid layouts
-- Professional gradients
+Built with a dark, minimal aesthetic using Tailwind CSS v4. Features a consistent color palette (Deep black backgrounds, amber accents) with smooth transitions and responsive layouts.
 
 ## API Routes
 
 The application proxies external APIs through `/api/v1/`:
+- User authentication endpoints
+- Weather API (OpenWeatherMap)
+- GitHub API (GitHub REST API)
 
-- `/api/v1/users/current-user` - Get current user info
-- External Weather API (OpenWeatherMap)
-- External GitHub API (GitHub REST API)
-
-## Performance
-
-### Optimizations
-
-- ✅ Removed webpack polling for faster dev server startup
-- ✅ Efficient code splitting with Next.js App Router
-- ✅ Optimized images with next/image
-- ✅ Minimal bundle size with tree-shaking
-- ✅ Client-side hydration optimization
-
-### Build Commands
+## Build & Deployment
 
 ```bash
 # Development
@@ -154,57 +147,14 @@ npm start
 npm run lint
 ```
 
-## Features & Capabilities
-
-### Landing Page
-- Hero section with call-to-action buttons
-- Feature showcase with mock UI boards
-- Responsive design
-- Smooth scroll animations
-- Professional navigation
-
-### Dashboard
-- User profile card with verification status
-- Quick access to all features
-- Professional layout with gradients
-- Role-based information display
-
-### Tools Page
-- Random tool showcase
-- Detailed tool information
-- Browse all tools grid
-- External links to tool websites
-
-### Weather Page
-- City search functionality
-- Real-time weather data
-- Multiple weather metrics
-- Visual representations
-
-### GitHub Page
-- Username search
-- Detailed user profiles
-- Statistics cards
-- Profile links
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss proposed changes.
 
 ## License
 
-This project is licensed under the MIT License - see LICENSE file for details.
+MIT License - see LICENSE file for details.
 
 ## Support
 
-For issues and questions, please visit the GitHub repository issues section.
-
----
-
-**Built with ❤️ for developers by developers**
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For issues and questions, please open an issue on the GitHub repository.

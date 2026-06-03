@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { validateInput, loginSchema } from "@/lib/validators";
 
 import Link from "next/link";
 import { ArrowLeft, KeyRound, UserRound, Loader2 } from "lucide-react";
@@ -16,6 +17,17 @@ export default function LoginPage() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
+    setError("");
+    
+    const formData = { username, password };
+
+    const validation = await validateInput(loginSchema, formData);
+    if (!validation.valid) {
+      setError(validation.error);
+      setLoading(false);
+      return;
+    }
+
     const url = "/api/v1/users/login";
     const data = { username, password };
 

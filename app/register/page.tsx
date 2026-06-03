@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { validateInput, registerSchema } from "@/lib/validators";
 
 import Link from "next/link";
 import { ArrowLeft, KeyRound, UserRound, Mail, Loader2 } from "lucide-react";
@@ -17,6 +18,22 @@ export default function RegisterPage() {
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         setLoading(true);
+        setError("");
+        
+        const formData = {
+            userName,
+            email,
+            password,
+            role: "USER",
+        };
+
+        const validation = await validateInput(registerSchema, formData);
+        if (!validation.valid) {
+            setError(validation.error);
+            setLoading(false);
+            return;
+        }
+
         const url = "/api/v1/users/register";
         const data = {
             email: email,
