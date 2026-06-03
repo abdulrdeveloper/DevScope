@@ -6,7 +6,7 @@ import { ArrowRight, Copyright, Sparkles, Terminal, CloudSun, Code, ShieldCheck,
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-amber-500/30">
-      
+
       <nav className="flex items-center justify-between px-4 sm:px-6 py-6 md:px-12 max-w-7xl mx-auto">
         <Link href="/" className="flex items-center gap-3">
           <div className="w-8 h-8 bg-amber-500 rounded flex items-center justify-center text-black font-bold">
@@ -28,12 +28,12 @@ export default function Home() {
         <div className="flex items-center gap-2 text-amber-500 border border-amber-500/20 bg-amber-500/10 px-3 py-1.5 sm:px-4 rounded-full mb-6 sm:mb-8 text-[10px] sm:text-xs font-semibold uppercase tracking-wide">
           <Sparkles size={14} className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> Professional Developer Dashboard
         </div>
-        
+
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 sm:mb-6 tracking-tight max-w-4xl leading-[1.1] md:leading-[1.05]">
           Everything You Need in <br className="hidden sm:block" />
           <span className="text-amber-500">One Developer Place</span>
         </h2>
-        
+
         <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mb-8 sm:mb-10 leading-relaxed font-light px-2 sm:px-0">
           150+ curated dev tools. Real-time global weather. Instant GitHub analytics. Access everything from a single, deeply integrated dashboard without bloat.
         </p>
@@ -65,7 +65,7 @@ export default function Home() {
       </section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-24 sm:mb-32 flex flex-col gap-24 md:gap-32 pb-10">
-        
+
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           <div className="flex-1 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#222] bg-[#111] text-xs font-bold text-gray-400 tracking-widest uppercase">
@@ -73,7 +73,7 @@ export default function Home() {
               // feature 01
             </div>
             <h3 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.1] uppercase">
-              <span className="text-white">ACCESS OVER </span> 
+              <span className="text-white">ACCESS OVER </span>
               <span className="text-amber-500">200+ DEVELOPER TOOLS</span>
               <span className="text-white"> AT YOUR FINGERTIPS.</span>
             </h3>
@@ -94,45 +94,45 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          
+
           <div className="flex-1 w-full relative group">
             <div className="absolute -inset-1 bg-linear-to-r from-amber-500/20 to-transparent rounded-3xl blur-xl opacity-100 transition duration-700"></div>
             <div className="bg-[#0a0a0a] border border-[#222] rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl h-90 md:h-100 flex items-center justify-center">
               <div className="absolute top-0 w-full h-px bg-linear-to-r from-transparent via-amber-500/50 to-transparent"></div>
-              
+
               <div className="w-full max-w-sm space-y-4">
                 <div className="flex items-center gap-3 bg-[#111] border border-[#333] rounded-lg p-3">
                   <Terminal className="text-amber-500" size={18} />
                   <div className="h-3 rounded-full bg-[#222] w-1/3"></div>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                   <div className="bg-[#111] border border-[#222] hover:border-amber-500/50 rounded-lg p-4 h-24 flex flex-col justify-between transition-all duration-300 animate-pulse hover:animate-none hover:scale-102">
-  <Code size={18} className="text-amber-500/50 hover:text-amber-500 transition-colors" />
-                   <div className="space-y-2">
-                       <div className="h-2 rounded-full bg-[#333] w-1/2"></div>
-                       <div className="h-2 rounded-full bg-[#222] w-3/4"></div>
-                     </div>
-                   </div>
-                   <div className="bg-[#111] border border-amber-500/50 rounded-lg p-4 h-24 flex flex-col justify-between transition-colors delay-75">
-                     <Terminal size={18} className="text-amber-500 transition-colors" />
-                     <div className="space-y-2">
-                       <div className="h-2 rounded-full bg-[#333] w-2/3"></div>
-                       <div className="h-2 rounded-full bg-[#222] w-1/2"></div>
-                     </div>
-                   </div>
+                  <div className="bg-[#111] border border-[#222] hover:border-amber-500/50 rounded-lg p-4 h-24 flex flex-col justify-between transition-all duration-300 animate-pulse hover:animate-none hover:scale-102">
+                    <Code size={18} className="text-amber-500/50 hover:text-amber-500 transition-colors" />
+                    <div className="space-y-2">
+                      <div className="h-2 rounded-full bg-[#333] w-1/2"></div>
+                      <div className="h-2 rounded-full bg-[#222] w-3/4"></div>
+                    </div>
+                  </div>
+                  <div className="bg-[#111] border border-amber-500/50 rounded-lg p-4 h-24 flex flex-col justify-between transition-colors delay-75">
+                    <Terminal size={18} className="text-amber-500 transition-colors" />
+                    <div className="space-y-2">
+                      <div className="h-2 rounded-full bg-[#333] w-2/3"></div>
+                      <div className="h-2 rounded-full bg-[#222] w-1/2"></div>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex justify-center my-2">
                   <div className="w-0.5 h-8 md:h-12 bg-linear-to-b from-[#333] to-amber-500/50 relative">
-                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,1)]"></div>
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,1)]"></div>
                   </div>
                 </div>
                 <div className="bg-[#111] border border-amber-500/30 rounded-lg p-3 flex items-center justify-between">
-                   <span className="text-xs text-amber-500 font-mono tracking-widest">200 OK • application/json</span>
-                   <div className="flex gap-1.5">
-                     <div className="w-1.5 h-1.5 rounded-full bg-[#333]"></div>
-                     <div className="w-1.5 h-1.5 rounded-full bg-[#333]"></div>
-                     <div className="w-1.5 h-1.5 rounded-full bg-[#333]"></div>
-                   </div>
+                  <span className="text-xs text-amber-500 font-mono tracking-widest">200 OK • application/json</span>
+                  <div className="flex gap-1.5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#333]"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#333]"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#333]"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -166,12 +166,12 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          
+
           <div className="flex-1 w-full relative group">
             <div className="absolute -inset-1 bg-linear-to-r from-amber-500/20 to-transparent rounded-3xl blur-xl opacity-100 transition duration-700"></div>
             <div className="bg-[#0a0a0a] border border-[#222] rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl h-90 md:h-100 flex items-center justify-center">
               <div className="absolute top-0 w-full h-px bg-linear-to-r from-transparent via-amber-500/50 to-transparent"></div>
-              
+
               <div className="w-full max-w-sm">
                 <div className="flex justify-between items-end mb-6 md:mb-10 border-b border-amber-500/30 pb-6 md:pb-10 transition-colors duration-500">
                   <div>
@@ -183,7 +183,7 @@ export default function Home() {
                   <CloudSun size={56} className="text-amber-500 scale-110 transition-all duration-500" />
                 </div>
                 <div className="space-y-4">
-                  {[ {l: 'MON', w: 40}, {l: 'TUE', w: 65}, {l: 'WED', w: 30} ].map((stat, index) => (
+                  {[{ l: 'MON', w: 40 }, { l: 'TUE', w: 65 }, { l: 'WED', w: 30 }].map((stat, index) => (
                     <div key={index} className="flex items-center gap-4">
                       <div className="w-8 text-xs text-gray-500 font-mono">{stat.l}</div>
                       <div className="flex-1 h-1.5 bg-[#1a1a1a] rounded-full overflow-hidden relative">
@@ -225,12 +225,12 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          
+
           <div className="flex-1 w-full relative group">
             <div className="absolute -inset-1 bg-linear-to-r from-amber-500/20 to-transparent rounded-3xl blur-xl opacity-100 transition duration-700"></div>
             <div className="bg-[#0a0a0a] border border-[#222] rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl h-90 md:h-100 flex items-center justify-center">
               <div className="absolute top-0 w-full h-px bg-linear-to-r from-transparent via-amber-500/50 to-transparent"></div>
-              
+
               <div className="w-full max-w-sm space-y-6">
                 <div className="flex gap-4 items-center">
                   <div className="w-14 h-14 rounded-full bg-linear-to-br animate-bounce from-[#1a1a1a] to-[#0a0a0a] border border-amber-500/50 flex items-center justify-center transition-colors">
@@ -255,9 +255,9 @@ export default function Home() {
                     <span>FETCH /users/:username</span>
                   </div>
                   <div className="h-24 bg-[#111] border border-amber-500/30 rounded-xl p-4 relative overflow-hidden font-mono text-[11px] text-gray-400 leading-relaxed transition-colors">
-                    <span className="text-amber-500">{`{`}</span><br/>
-                    <span className="pl-4">"login": <span className="text-blue-400">"abdulrdeveloper"</span>,</span><br/>
-                    <span className="pl-4">"id": <span className="text-[#a78bfa]">1</span>,</span><br/>
+                    <span className="text-amber-500">{`{`}</span><br />
+                    <span className="pl-4">"login": <span className="text-blue-400">"abdulrdeveloper"</span>,</span><br />
+                    <span className="pl-4">"id": <span className="text-[#a78bfa]">1</span>,</span><br />
                     <span className="text-amber-500">{`}`}</span>
                   </div>
                 </div>
@@ -293,12 +293,12 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          
+
           <div className="flex-1 w-full relative group">
             <div className="absolute -inset-1 bg-linear-to-r from-amber-500/20 to-transparent rounded-3xl blur-xl opacity-100 transition duration-700"></div>
             <div className="bg-[#0a0a0a] border border-[#222] rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl h-90 md:h-100 flex items-center justify-center">
               <div className="absolute top-0 w-full h-px bg-linear-to-r from-transparent via-amber-500/50 to-transparent"></div>
-              
+
               <div className="w-full max-w-sm flex flex-col items-center justify-center space-y-8">
                 <div className="relative">
                   <div className="absolute inset-0 bg-amber-500/20 blur-2xl rounded-full"></div>
@@ -306,7 +306,7 @@ export default function Home() {
                     <ShieldCheck size={40} className="text-amber-500" />
                   </div>
                 </div>
-                
+
                 <div className="w-full space-y-3">
                   <div className="h-10 bg-[#111] border border-[#222] rounded-lg p-2 flex items-center px-4 overflow-hidden relative">
                     <div className="absolute top-0 left-0 h-full w-1 bg-amber-500"></div>

@@ -9,26 +9,13 @@ function Dashboard() {
   const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
-    async function currentUser() {
-      try {
-        const res = await fetch("/api/v1/users/current-user", {
-          credentials: "include"
-        });
+  const cached = localStorage.getItem("user");
+  if (cached) {
+    setUser(JSON.parse(cached));
+  }
+}, [])
 
-        if (!res.ok) {
-          throw new Error(`HTTP error : ${res.status}`);
-        }
-
-        const data = await res.json()
-        setUser(data.data)
-      } catch (error) {
-        console.error(`Error : `, error)
-      }
-    }
-    currentUser();
-  }, [])
-
-   if (!user) {
+  if (!user) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -56,7 +43,7 @@ function Dashboard() {
               <div className="w-20 h-20 rounded-full bg-linear-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/30 flex items-center justify-center shrink-0 group-hover:border-amber-500/50 transition-all duration-300">
                 <User size={32} className="text-amber-500" />
               </div>
-              <div>
+              <div className="break-all">
                 <h2 className="text-2xl font-black mb-2">{user.username}</h2>
                 <p className="text-[#999] font-light mb-3">{user.email}</p>
                 <div className="flex items-center gap-3 flex-wrap">

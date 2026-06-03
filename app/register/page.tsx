@@ -11,6 +11,9 @@ export default function RegisterPage() {
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [usernameError, setUsernameError] = useState("");
+    const [emailError, setEmailError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("")
     const router = useRouter();
@@ -19,7 +22,7 @@ export default function RegisterPage() {
         e.preventDefault();
         setLoading(true);
         setError("");
-        
+
         const formData = {
             userName,
             email,
@@ -59,7 +62,9 @@ export default function RegisterPage() {
             }
 
             console.log(`Success: `, result);
-            router.push("/login");
+            document.cookie = "isLoggedIn=true; path=/; max-age=86400";
+            localStorage.setItem("user", JSON.stringify(result.data.user));
+            router.push("/dashboard");
 
         } catch (error: any) {
             console.log(`Failed : `, error.message || error);
@@ -68,6 +73,8 @@ export default function RegisterPage() {
             setLoading(false);
         }
     }
+
+
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a] p-4 relative overflow-hidden">
@@ -98,10 +105,15 @@ export default function RegisterPage() {
                                 type="text"
                                 placeholder="Choose a username"
                                 value={userName}
-                                onChange={(e) => setUserName(e.target.value)}
+                                onChange={(e) => {
+                                    setUserName(e.target.value);
+                                    if (e.target.value.length < 3) setUsernameError("Min 3 characters");
+                                    else setUsernameError("");
+                                }}
                                 className="w-full bg-[#1a1a1a] border border-[#333] text-white pl-10 p-3 rounded-xl focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50 outline-none transition-all placeholder:text-gray-600"
                                 required
                             />
+                            {usernameError && <p className="text-red-400 text-xs mt-1">{usernameError}</p>}
                         </div>
                     </div>
 
@@ -115,13 +127,18 @@ export default function RegisterPage() {
                                 type="email"
                                 placeholder="Enter your email"
                                 value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={(e) => {
+                                    setEmail(e.target.value);
+                                    if (!e.target.value.includes("@")) setEmailError("Enter a valid email");
+                                    else setEmailError("");
+                                }}
                                 className="w-full bg-[#1a1a1a] border border-[#333] text-white pl-10 p-3 rounded-xl focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50 outline-none transition-all placeholder:text-gray-600"
                                 required
                             />
+                            {emailError && <p className="text-red-400 text-xs mt-1">{emailError}</p>}
                         </div>
                     </div>
-                    
+
                     <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-400 block">Password</label>
                         <div className="relative">
@@ -132,10 +149,18 @@ export default function RegisterPage() {
                                 type="password"
                                 placeholder="Create a password"
                                 value={password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                onChange={(e) => {
+                                    setPassword(e.target.value);
+                                    const val = e.target.value;
+                                    if (val.length < 6) setPasswordError("Min 6 characters");
+                                    else if (!/[A-Z]/.test(val)) setPasswordError("Need one uppercase letter");
+                                    else if (!/[0-9]/.test(val)) setPasswordError("Need one number");
+                                    else setPasswordError("");
+                                }}
                                 className="w-full bg-[#1a1a1a] border border-[#333] text-white pl-10 p-3 rounded-xl focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50 outline-none transition-all placeholder:text-gray-600"
                                 required
                             />
+                            {passwordError && <p className="text-red-400 text-xs mt-1">{passwordError}</p>}
                         </div>
                     </div>
 

@@ -18,7 +18,7 @@ export default function LoginPage() {
     e.preventDefault();
     setLoading(true);
     setError("");
-    
+
     const formData = { username, password };
 
     const validation = await validateInput(loginSchema, formData);
@@ -46,6 +46,7 @@ export default function LoginPage() {
 
       console.log(`Success: `, result);
       document.cookie = "isLoggedIn=true; path=/; max-age=86400";
+      localStorage.setItem("user", JSON.stringify(result.data.user));
       router.push('/dashboard');
 
     } catch (error: any) {
