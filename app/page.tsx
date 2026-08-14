@@ -70,7 +70,6 @@ export default function Home() {
           <div className="flex-1 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#222] bg-[#111] text-xs font-bold text-gray-400 tracking-widest uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
-              // feature 01
             </div>
             <h3 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.1] uppercase">
               <span className="text-white">ACCESS OVER </span>
@@ -143,7 +142,6 @@ export default function Home() {
           <div className="flex-1 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#222] bg-[#111] text-xs font-bold text-gray-400 tracking-widest uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
-              // feature 02
             </div>
             <h3 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.1] uppercase">
               <span className="text-amber-500">REAL-TIME</span>
@@ -201,7 +199,6 @@ export default function Home() {
           <div className="flex-1 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#222] bg-[#111] text-xs font-bold text-gray-400 tracking-widest uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
-              // feature 03
             </div>
             <h3 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.1] uppercase">
               <span className="text-white">DEEP </span>
@@ -270,7 +267,6 @@ export default function Home() {
           <div className="flex-1 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#222] bg-[#111] text-xs font-bold text-gray-400 tracking-widest uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
-              // feature 04
             </div>
             <h3 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.1] uppercase">
               <span className="text-amber-500">100% PRIVATE</span>
